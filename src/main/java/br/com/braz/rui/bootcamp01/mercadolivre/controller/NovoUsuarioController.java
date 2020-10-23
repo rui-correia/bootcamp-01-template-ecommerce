@@ -7,14 +7,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.EntityManager;
-
+import javax.validation.Valid;
 
 
 @RestController
@@ -29,7 +28,7 @@ public class NovoUsuarioController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity<?> novoUsuario(@Validated @RequestBody NovoUsuarioRequest novoUsuarioRequest){
+    public ResponseEntity<?> novoUsuario(@Valid @RequestBody NovoUsuarioRequest novoUsuarioRequest){
 
         novoUsuarioRequest.setSenha(bCryptPasswordEncoder.encode(novoUsuarioRequest.getSenha()));
         novoUsuarioRequest.setLogin(novoUsuarioRequest.getLogin().toLowerCase());
