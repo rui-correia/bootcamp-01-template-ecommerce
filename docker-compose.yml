@@ -1,0 +1,32 @@
+version: "3"
+services:
+  
+  postgres-bootcamp01:
+    image: postgres:9.6
+    container_name: "postgres-ml"
+    environment:
+      POSTGRES_DB: "bootcamp01-ml"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      TZ: "GMT"
+    volumes:
+      - 'D:\dev\postgres\bootcamp01-ml:/var/lib/postgresql/data'
+    ports:
+      - "5432:5432"
+    networks: 
+      - postgres-bootcamp01-ml
+    
+
+  pgadmin4:
+    image: dpage/pgadmin4:4.10
+    container_name: "pgadmin4-ml"
+    environment: 
+      PGADMIN_DEFAULT_EMAIL: "admin@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "secret"
+    ports: 
+      - "8082:80"
+    networks: 
+      - postgres-bootcamp01-ml
+    
+networks: 
+  postgres-bootcamp01-ml:
