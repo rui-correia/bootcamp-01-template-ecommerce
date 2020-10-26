@@ -27,7 +27,7 @@ public class NovaCategoriaController {
 
 
         novaCategoriaRequest.setNome(novaCategoriaRequest.getNome().toLowerCase());
-        Categoria categoria = novaCategoriaRequest.toModel();
+        Categoria categoria = novaCategoriaRequest.toModel(entityManager);
         entityManager.persist(categoria);
 
         return ResponseEntity.status(HttpStatus.OK).build();
