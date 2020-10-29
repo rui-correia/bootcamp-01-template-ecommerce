@@ -18,8 +18,6 @@ public class ExisteCadastradoValidator implements ConstraintValidator<ExisteCada
     @PersistenceContext
     EntityManager entityManager;
 
-
-
     @Override
     public void initialize(ExisteCadastrado existeCadastrado) {
         campo = existeCadastrado.fieldName();

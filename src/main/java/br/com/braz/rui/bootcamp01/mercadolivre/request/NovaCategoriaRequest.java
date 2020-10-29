@@ -16,10 +16,8 @@ public class NovaCategoriaRequest {
     @ExisteCadastrado(domainClass = Categoria.class, fieldName = "id")
     private Long idCategoriaMae;
 
-
     @Deprecated
     public NovaCategoriaRequest(){}
-
 
     public NovaCategoriaRequest(@NotBlank String nome) {
         this.nome = nome;

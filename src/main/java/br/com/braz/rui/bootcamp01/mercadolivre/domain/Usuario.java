@@ -1,9 +1,5 @@
 package br.com.braz.rui.bootcamp01.mercadolivre.domain;
 
-import br.com.braz.rui.bootcamp01.mercadolivre.annotation.NomeUnico;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
